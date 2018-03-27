@@ -1,86 +1,125 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Lab 5 : I Built A Zoo!
-=====================================
+# Zoo
 
-## To Submit this Assignment
-- fork this repository
-- create a new branch named `lab05-`; + `<your name>` **e.g.** `lab05-amanda`
-- write your code
-- push to your repository
-- submit a pull request to this repository
-- submit a link to your PR in canvas
-- Include a Readme.md (contents described below)
+**Author**: Joshua Taylor
+**Version**: 1.0.0
 
-## Directions
-Your job is to build out a structure of a zoo within Visual Studio and a digital diagram. Have fun with this project, No need to study 
-or research the scientific names of the animals, kepe it simple (i.e. Animal, Mammel, Reptile, Bird, Dog, Fish, etc...)
+## Overview
 
-Using all 4 of the Object Oriented Principles (OOPs): 
-1. Build out the hierarchical class structure of a zoo within Visual Studio and a digital diagram. 
-2. There should be at least 3 layers of inheritance with at least 6 different types of animals. 
-3. Prove that the OOP principles are being used by returning strings as neccesary to prove that a methods were propertly  implemented or inherited.
-4. Examples include: `Eat()` `Sleep()` `Sound()` etc... 
-5. You are allowed to use these example methods, along with others not listed
-6. Be sure to include a diagram with your solution of how your zoo is mapped out. 
-7. Include the following labels:
-	1. Label the parent and derived classes
-	2. Label the abstract classes and concrete classes
-	3. Label the access modifiers for each of the classes
-	4. Label where you are using Polymorphism in your program. Where are the virtual and abstract methods defined, and where are they being overridden?
+Zoo is an application made to demonstrate the four pillars of object
+oriented design -- Inheritance, Encapsulation, Polymorphism, and
+Abstraction. The actual operation of the application is a simple
+series of writing to the console various properties and methods
+of classes up and down the class hierarchy emulating a tour guide giving
+a tour of all of the zoo's animals to guests.
 
+### Object-Oriented Programming (OOP) Principals
 
-## Components
-- Have at least 3 different abstract classes
-- Have at least 3 layers of inheritance
-- Have at least 4 abstract methods (make sure you override them)
-- Have at least 4 virtual methods (make sure you override them)
+#### Inheritance ####
+Inheritance is the ability for classes to inherit methods, properties,
+and fields from another class. The class which inherits these things is
+called a derived class, and the class that is being inherited is a
+base class. Inheritance allows us to reduce the amount of redundancy in
+our code, enforce hierarchies of classes, and allow for modularity when
+combined with the other principals of object oriented programming.
 
-Your readme is extremely important in this lab because it will be a guide for us to know exactly what you did where and how. 
-Define for me, in your readme, in addition to what is described below:
-1. The definitions of each of the OOP principles (in your own words), 
-2. A **couple** examples (you do not have to write all occurances out) where you are practing each of the OOP principles. 
+#### Encapsulation ####
+Encapsulation is the ability for classes to control where and how its
+methods, properties, and fields can be accessed. Some classes represent
+state in a way that should not be accessed by end users. Examples of this
+include file I/O, cryptography, and complex, stateful data structures.
+In these cases, a class can restrict users from modifying its state in
+unexpected ways by exposing a controlled, safe API. This API, being a
+part of the class itself (or along an inheritance hierarchy) can manipulate
+the class's state as it was intended by the class's and overall
+architecture's designers. An added benefit to encapsulation is its ability
+to hide complexity from users by only allowing the relevant subset of
+methods and properties needed to interact with a particular class.
 
-Your program class should instantiate each of the concrete animals to prove that the functionality for each of the animals is as desired. 
+#### Polymorphism
+
+Polymorphism is the ability of methods and properties to take on multiple
+forms based on the context of operation and/or state. A base class can
+declare abstractions to methods and properties that can be overridden by
+derived classes which modify their behavior and/or default state. The end
+user does not need to concern him or herself with as many details of this
+polymorphic implementation but can instead rely on objects' classes to
+provide relevancy to the context in which those objects are being used.
+_Polymorphism enables code modularity and extensibility through
+substitution_ and prevents redundant methods from having to be written to account for miniscule variations between classes.
+
+#### Abstraction
+
+Abstraction is the ability in object-oriented programming to provide
+partial definitions of methods and properties which can be defined elsewhere
+by a derived class. A base class can define the types of behaviors that are
+to be expected for derived classes to have without forcing pre-defined
+behavior. This can be done by simply delineating the signature for a method
+or property, or it can be done by providing a default implementation which
+can then be overridden for more specific behavior by a derived class. The
+former is known in C# as _abstract_ methods and properties, and these can
+only be declared within abstract classes which cannot be instantiated.
+These must be implemented by the first non-abstract, concrete class within
+an inheritance hierarchy. The latter is provided via the _virtual_ keyword in C#, and these can be declared in abstract *or* non-abstract, concrete
+classes. 
+
+## Getting Started
+
+Zoo targets the .NET Core 2.0 platform. The .NET Core 2.0 SDK can
+be downloaded from the following URL for Windows, Linux, and macOS:
+
+https://www.microsoft.com/net/download/
+
+The dotnet CLI utility would then be used to build and run the application:
+
+    cd Zoo
+    dotnet build
+    dotnet run
+
+Additionally, users can build, run, and perform unit testing using Visual
+Studio 2017 or greater by opening the solution file at the root of this
+repository.
 
 ## Example
-Please refer to the included diagram and code base as an example of the expectiation. 
 
-## ReadMe
-A README is a module consumer's first -- and maybe only -- look into your creation. The consumer wants a module to fulfill their need, so you must explain exactly what need your module fills, and how effectively it does so.
-<br />
-Your job is to
-1. tell them what it is (with context)
-1. Show where each of the OOP principles are being used
-2. show them what it looks like in action
-3. show them how they use it
-4. tell them any other relevant details
-<br />
+#### Starting a New Game ####
+![Birds Screenshot](/assets/birdsScreenshot.JPG)
+#### Taking a Turn ####
+![Fish Screenshot](/assets/fishScreenshot.JPG)
+#### Victory ####
+![Mammals Screenshot](/assets/mammalsScreenshot.JPG)
 
-This is ***your*** job. It's up to the module creator to prove that their work is a shining gem in the sea of slipshod modules. 
-Since so many developers' eyes will find their way to your README before anything else, quality here is your public-facing measure of your work.
+## Architecture
 
-<br /> Refer to the sample-README in the class repo for an example. 
-- [Reference](https://github.com/noffle/art-of-readme)
+Zoo is composed of numerous classes representing individual species of
+animals. Each of these are derived from base classes which provide common
+functionality across the taxonomy of the zoo's various fauna. An example
+of this is the Eagle class which is a concrete class that inherits from
+the Raptor abstract class which inherits from the Flying abstract class
+which inherits from the Bird class which inherits from the master base
+class for all animals in the zoo, Animal.
 
+### Class Hierarchy
 
-## Rubric
-- 7pts: Program meets all requirements described in Lab directions
+The following is a graphical representation of the class hierarchy for all
+derived animal classes and their bases, ultimately leading to the master
+base class, Animal. Each class in the following diagram include the access
+modifiers (encapsulation), abstractions (abstraction / polymorphism), and
+inheritance represented by arrows (inheritance).
 
-	Points  | Reasoning | 
-	 ------------ | :-----------: | 
-	7       | Program runs as expected, no exceptions during execution // Documenation and OOP implemenation exactly as required |
-	5       | Program runs/compiles, Some implementation errors with OOP principles // Diagram shows some implementation errors|
-	4       | Program runs/compiles // Digital Diagram missing approx. half of the required labels // Improper use of OOP principles |
-	2       | Missing tests // tests are not passing // not enough valid tests |
-	2       | Missing Readme Document // Readme Document does not meet standards |
-	0       | Program does not compile/run. Build Errors. |
-	0       | No Submission |
+![Class Hierarchy Diagram](/assets/zooClasses.JPG)
 
-- 3pts: Code meets industry standards
-	- These points are only awardable if you score at minimum a 5/7 on above criteria
+### Data Model
 
-	Points  | Reasoning | 
-	 ------------ | :-----------: | 
-	3       | Code meets Industry Standards // methods and variables namings are appropriate // Selective and iterative statements are used appropriately, Fundamentals are propertly executed // Clearly and cleanly commented |
-	2       | syntax for naming conventions are not correct (camelCasing and PascalCasing are used appropriately) // slight errors in use of fundamentals // Missing some comments |
-	1       | Inappropriate naming conventions, and/or inappropriate use of fundamentals // Code is not commented  |
-	0       | No Submission or incomplete submission |
+All data is stored in memory on the heap by instantiating classes using the
+*new* keyword. No data persistence is supported by this application.
+
+### Command Line Interface (CLI)
+
+Zoo's interface is a simple console-based command line interface. Text is
+written to the console emulating a tour guide giving a tour of all the
+animals in the zoo followed by prompts for the user to press a key.
+
+## Change Log
+
+* 3.26.2018 [Joshua Taylor](mailto:taylor.joshua88@gmail.com) - Initial
+release. All tests are passing.
