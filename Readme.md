@@ -81,11 +81,11 @@ repository.
 
 ## Example
 
-#### Starting a New Game ####
+#### Birds ####
 ![Birds Screenshot](/assets/birdsScreenshot.JPG)
-#### Taking a Turn ####
+#### Fish ####
 ![Fish Screenshot](/assets/fishScreenshot.JPG)
-#### Victory ####
+#### Mammals ####
 ![Mammals Screenshot](/assets/mammalsScreenshot.JPG)
 
 ## Architecture
