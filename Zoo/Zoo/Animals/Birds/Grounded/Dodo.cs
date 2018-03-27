@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Zoo.Animals.Birds.Grounded
 {
+    /// <summary>
+    /// Class for the dodo corpses in our zoo
+    /// </summary>
     public class Dodo : Grounded
     {
         public override bool IsAlive { get; set; } = false;

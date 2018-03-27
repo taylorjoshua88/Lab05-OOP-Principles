@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Zoo.Animals.Fish.Freshwater
 {
+    /// <summary>
+    /// Class for the bass in our zoo
+    /// </summary>
     class Bass : Freshwater
     {
         public override string Name { get; protected set; } = "Bass";

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Zoo.Animals.Birds
 {
+    /// <summary>
+    /// Base class for the birds in our zoo
+    /// </summary>
     public abstract class Bird : Animal
     {
         public override int Legs { get; protected set; } = 2;

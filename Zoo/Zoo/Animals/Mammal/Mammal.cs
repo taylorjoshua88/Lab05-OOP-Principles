@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Zoo.Animals.Mammal
 {
+    /// <summary>
+    /// Base class for the mammals in our zoo
+    /// </summary>
     public abstract class Mammal : Animal
     {
         public abstract int FurLength { get; set; }

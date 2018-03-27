@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Zoo.Animals.Mammal.Rodent
 {
+    /// <summary>
+    /// Class for the chipmunks in our zoo
+    /// </summary>
     public class Chipmunk : Rodent
     {
         public override string Name { get; protected set; } = "Chipmunk";

@@ -4,6 +4,10 @@ namespace Zoo
 {
     class Program
     {
+        /// <summary>
+        /// Entry-point to our program
+        /// </summary>
+        /// <param name="args">Command line arguments</param>
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to our zoo!");
@@ -34,6 +38,9 @@ namespace Zoo
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Writes a list of birds in the zoo and has them perform actions
+        /// </summary>
         static void PresentBirds()
         {
             Console.Clear();
@@ -88,6 +95,9 @@ namespace Zoo
             Console.WriteLine($"The {dodo.Name} is now {(dodo.CheckPulse() ? "alive" : "dead, unfortunately.")}");
         }
 
+        /// <summary>
+        /// Writes a list of fish in the zoo and has them perform actions
+        /// </summary>
         static void PresentFish()
         {
             Console.Clear();
@@ -127,6 +137,9 @@ namespace Zoo
             Console.WriteLine(tigerShark.Move());
         }
 
+        /// <summary>
+        /// Writes a list of mammals in the zoo and has them perform actions
+        /// </summary>
         static void PresentMammals()
         {
             Console.Clear();
